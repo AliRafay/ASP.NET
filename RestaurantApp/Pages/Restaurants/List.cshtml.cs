@@ -9,9 +9,10 @@ namespace RestaurantApp.Pages.Restaurants
 {
     public class ListModel : PageModel
     {
+        public string Message;
         public void OnGet()
         {
-
+            Message = "Hello World";
         }
     }
 }
