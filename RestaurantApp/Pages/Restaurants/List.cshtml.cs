@@ -9,7 +9,8 @@ namespace RestaurantApp.Pages.Restaurants
 {
     public class ListModel : PageModel
     {
-        public string Message;
+        //public string Message;
+        public string Message { get; set; }
         public void OnGet()
         {
             Message = "Hello World";
