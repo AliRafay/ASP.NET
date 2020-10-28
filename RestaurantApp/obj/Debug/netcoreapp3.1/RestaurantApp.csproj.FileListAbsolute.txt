@@ -35,3 +35,4 @@ C:\Users\Koderlabs\Desktop\ASP.NET\RestaurantApp\obj\Debug\netcoreapp3.1\Restaur
 C:\Users\Koderlabs\Desktop\ASP.NET\RestaurantApp\obj\Debug\netcoreapp3.1\RestaurantApp.pdb
 C:\Users\Koderlabs\Desktop\ASP.NET\RestaurantApp\obj\Debug\netcoreapp3.1\RestaurantApp.genruntimeconfig.cache
 C:\Users\Koderlabs\Desktop\ASP.NET\RestaurantApp\obj\Debug\netcoreapp3.1\RestaurantApp.csproj.CopyComplete
+C:\Users\Koderlabs\Desktop\ASP.NET\RestaurantApp\obj\Debug\netcoreapp3.1\Razor\Pages\Restaurants\List.cshtml.g.cs
