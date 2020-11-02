@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace CitiesInfo.API.Controllers
 {
@@ -13,15 +13,16 @@ namespace CitiesInfo.API.Controllers
         [HttpGet]
         public JsonResult GetCities()
         {
-            return new JsonResult(
-                new List<object>()
-                {
-                new {id=1 , Name="Karachi"},
-                new {id=2 , Name="Lahore"},
-                new {id=3 , Name="Islamabad"},
-                }
-                );
+            return new JsonResult(CitiesDataStore.StaticDataStoreObj.Cities);
         }
+
+        [HttpGet("{id}")]
+        public JsonResult GetCity(int id)
+        {
+            return new JsonResult(CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == id));
+            //FirstOrDefault is a LINQ Function that returns the first element that satisfies the condition or default.
+        }
+
         //public string Message()
         //{
         //    return "hello";
