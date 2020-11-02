@@ -39,6 +39,8 @@ namespace CitiesInfo.API
 
             app.UseAuthorization();
 
+            app.UseStatusCodePages(); // uses status codes pages that returns texts
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
