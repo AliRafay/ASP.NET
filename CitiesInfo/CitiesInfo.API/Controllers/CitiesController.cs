@@ -3,11 +3,14 @@ using System.Collections.Generic;
 
 namespace CitiesInfo.API.Controllers
 {
-    //[Route("api/[controller]")]
+    [Route("api/[Controller]")] //Controller = Cities
+    // OR //
+    //[Route("api/cities")] //do this for all Requests or do Indivisually 
     [ApiController]
     public class CitiesController : ControllerBase
     {
-        [HttpPost("api/cities")]
+        //[HttpGet("api/cities")] // Indivisual Route, has to be specified for every single request
+        [HttpGet]
         public JsonResult GetCities()
         {
             return new JsonResult(
