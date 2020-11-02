@@ -50,7 +50,7 @@ namespace CitiesInfo.API
                         },
                         new PlacesToVisitDto()
                         {
-                            Id=2,
+                            Id=3,
                             Name="Lahore Fort"
                         }
                     }
