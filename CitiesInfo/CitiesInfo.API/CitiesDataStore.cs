@@ -40,17 +40,17 @@ namespace CitiesInfo.API
                     {
                         new PlacesToVisitDto()
                         {
-                            Id=1,
+                            Id=3,
                             Name="Orange Train"
                         },
                         new PlacesToVisitDto()
                         {
-                            Id=2,
+                            Id=4,
                             Name="Badshahi Mosque"
                         },
                         new PlacesToVisitDto()
                         {
-                            Id=3,
+                            Id=5,
                             Name="Lahore Fort"
                         }
                     }
@@ -64,7 +64,7 @@ namespace CitiesInfo.API
                     {
                         new PlacesToVisitDto()
                         {
-                            Id=1,
+                            Id=6,
                             Name="Rani Kot Fort"
                         }
                     }
