@@ -1,14 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using System.Runtime.Serialization.Json;
+using System.Text.Json;
 
 namespace CitiesInfo.API
 {
@@ -24,7 +22,24 @@ namespace CitiesInfo.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddMvcOptions(o =>
+                {
+                    //o.OutputFormatters.Add(new XmlSerializerOutputFormatter());  
+
+                    //The XmlSerializerOutputFormatter is an asp.net core outputformatter that uses the XmlSerializer internally, 
+                    //whereas the DataContractSerializerOutputFormatter uses the DataContractSerializer internally.
+
+                    //The DataContractSerializer is more flexible in configuration.For example it supports reference detection to prevent the serializer from recursively serializing items, 
+                    //which would normally cause an endless loop.
+                    //o.OutputFormatters.RemoveType(typeof(SystemTextJsonOutputFormatter)); //this changes the default to xml format
+
+                    o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+
+                    //o.OutputFormatters.Add(new SystemTextJsonOutputFormatter(jsonSerializerOptions:null)); //since default is xml, now we again add json for specific requests
+
+
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
