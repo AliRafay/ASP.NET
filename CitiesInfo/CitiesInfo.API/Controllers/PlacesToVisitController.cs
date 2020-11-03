@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Models;
+using System.Linq;
 
 
 namespace CitiesInfo.API.Controllers
@@ -16,12 +16,12 @@ namespace CitiesInfo.API.Controllers
             if (city == null)
             {
                 return NotFound();
-                
+
             }
             return Ok(city.PlacesToVisit);
         }
 
-        [HttpGet("{id}" , Name = "GetPlaceToVisit")]
+        [HttpGet("{id}", Name = "GetPlaceToVisit")]
         public IActionResult GetPlaceToVisit(int id, int cityId)
         {
             var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
@@ -33,7 +33,7 @@ namespace CitiesInfo.API.Controllers
 
             var place = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
 
-            if(place == null)
+            if (place == null)
             {
                 return NotFound();
             }
@@ -41,7 +41,7 @@ namespace CitiesInfo.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreatePlaceToVisit(int cityId, PlacesToVisitForCreationDto newPlaceToVisit )
+        public IActionResult CreatePlaceToVisit(int cityId, PlacesToVisitForCreationDto newPlaceToVisit)
         {
             var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
             if (city == null)
@@ -60,10 +60,29 @@ namespace CitiesInfo.API.Controllers
             city.PlacesToVisit.Add(finalPlaceToVisit);
 
             return CreatedAtRoute("GetPlaceToVisit",       //Route name , Route values, and Object
-                new { id= finalPlaceToVisit.Id , cityId }, 
+                new { id = finalPlaceToVisit.Id, cityId },
                 finalPlaceToVisit);
         }
 
+        [HttpPut("{id}")]
+        public IActionResult  FullUpdatePlaceToVisit(int id, int cityId, PlacesToVisitForUpdateDto updatedPlace)
+        {
+            var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+            if (city == null)
+            {
+                return NotFound();
+            }
+            PlacesToVisitDto placeFromStore = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
 
+            if(placeFromStore == null)
+            {
+                return NotFound();
+            }
+
+            placeFromStore.Name = updatedPlace.Name;
+
+            return NoContent();
+        }
     }
+
 }
