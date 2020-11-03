@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Models;
+
 
 namespace CitiesInfo.API.Controllers
 {
@@ -23,7 +21,7 @@ namespace CitiesInfo.API.Controllers
             return Ok(city.PlacesToVisit);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}" , Name = "GetPlaceToVisit")]
         public IActionResult GetPlaceToVisit(int id, int cityId)
         {
             var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
@@ -39,8 +37,31 @@ namespace CitiesInfo.API.Controllers
             {
                 return NotFound();
             }
-
             return Ok(place);
+        }
+
+        [HttpPost]
+        public IActionResult CreatePlaceToVisit(int cityId, PlacesToVisitForCreationDto newPlaceToVisit )
+        {
+            var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+            if (city == null)
+            {
+                return NotFound();
+            }
+
+            int maxIdPlacesToVisit = CitiesDataStore.StaticDataStoreObj.Cities.SelectMany(c => c.PlacesToVisit).Max(p => p.Id);
+
+            PlacesToVisitDto finalPlaceToVisit = new PlacesToVisitDto()
+            {
+                Id = ++maxIdPlacesToVisit,
+                Name = newPlaceToVisit.Name
+            };
+
+            city.PlacesToVisit.Add(finalPlaceToVisit);
+
+            return CreatedAtRoute("GetPlaceToVisit",       //Route name , Route values, and Object
+                new { id= finalPlaceToVisit.Id , cityId }, 
+                finalPlaceToVisit);
         }
     }
 }
