@@ -63,5 +63,7 @@ namespace CitiesInfo.API.Controllers
                 new { id= finalPlaceToVisit.Id , cityId }, 
                 finalPlaceToVisit);
         }
+
+
     }
 }
