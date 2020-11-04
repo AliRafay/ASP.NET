@@ -22,12 +22,15 @@ namespace CitiesInfo.API
                         new PlacesToVisitDto()
                         {
                             Id=1,
-                            Name="Chunky Monkey"
+                            Name="Chunky Monkey",
+                            Description="Amusement Park"
                         },
                         new PlacesToVisitDto()
                         {
                             Id=2,
-                            Name="Mazar e Quaid"
+                            Name="Mazar e Quaid",
+                            Description="Mohammad Ali Jinnah Grave"
+
                         }
                     }
                 },
@@ -41,17 +44,23 @@ namespace CitiesInfo.API
                         new PlacesToVisitDto()
                         {
                             Id=3,
-                            Name="Orange Train"
+                            Name="Orange Train",
+                            Description="PMLN's train plan"
+
                         },
                         new PlacesToVisitDto()
                         {
                             Id=4,
-                            Name="Badshahi Mosque"
+                            Name="Badshahi Mosque",
+                            Description="red mosque"
+
                         },
                         new PlacesToVisitDto()
                         {
                             Id=5,
-                            Name="Lahore Fort"
+                            Name="Lahore Fort",
+                            Description="An old fort of Lahore"
+
                         }
                     }
                 },
@@ -65,7 +74,9 @@ namespace CitiesInfo.API
                         new PlacesToVisitDto()
                         {
                             Id=6,
-                            Name="Rani Kot Fort"
+                            Name="Rani Kot Fort",
+                            Description="Fort of Rani Kot"
+
                         }
                     }
                 },
