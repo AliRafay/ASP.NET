@@ -18,7 +18,10 @@ namespace CitiesInfo.API
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {   
+            services.AddControllersWithViews().AddNewtonsoftJson(); //Service to fix API error:
+            //The JSON value could not be converted to Microsoft.AspNetCore.JsonPatch.JsonPatchDocument
+
             services.AddControllers()
                 .AddMvcOptions(o =>
                 {
