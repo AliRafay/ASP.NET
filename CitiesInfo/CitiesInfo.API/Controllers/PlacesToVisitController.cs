@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Models;
+using System;
 using System.Linq;
 
 
@@ -10,12 +12,19 @@ namespace CitiesInfo.API.Controllers
     [ApiController]
     public class PlacesToVisitController : ControllerBase
     {
+        private readonly ILogger<PlacesToVisitController> logger;
+        public PlacesToVisitController(ILogger<PlacesToVisitController> l)
+        {
+            logger = l ?? throw new ArgumentNullException(nameof(l));
+        }
+
         [HttpGet]
         public IActionResult GetPlacesToVisit(int cityId)
         {
             var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
             if (city == null)
             {
+                //logger.LogInformation($"City with id={cityId} was Not Found");
                 return NotFound();
 
             }
@@ -67,7 +76,7 @@ namespace CitiesInfo.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult  FullUpdatePlaceToVisit(int id, int cityId, PlacesToVisitForUpdateDto updatedPlace)
+        public IActionResult FullUpdatePlaceToVisit(int id, int cityId, PlacesToVisitForUpdateDto updatedPlace)
         {
             var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
             if (city == null)
@@ -76,7 +85,7 @@ namespace CitiesInfo.API.Controllers
             }
             PlacesToVisitDto placeFromStore = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
 
-            if(placeFromStore == null)
+            if (placeFromStore == null)
             {
                 return NotFound();
             }
@@ -110,7 +119,7 @@ namespace CitiesInfo.API.Controllers
                 Description = placeFromStore.Description
             };
 
-            patchDoc.ApplyTo(PlaceToVisitToPatch,ModelState); //this will patch the PlaceToVisitToPatch
+            patchDoc.ApplyTo(PlaceToVisitToPatch, ModelState); //this will patch the PlaceToVisitToPatch
                                                                //passing 'modelstate' because if an invalid property is passed,
                                                                //we need to send a bad request
             if (!ModelState.IsValid)
