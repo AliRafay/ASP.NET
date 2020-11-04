@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Threading;
 
 namespace CitiesInfo.API
 {
@@ -37,9 +38,14 @@ namespace CitiesInfo.API
                     o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
 
                     //o.OutputFormatters.Add(new SystemTextJsonOutputFormatter(jsonSerializerOptions:null)); //since default is xml, now we again add json for specific requests
-
-
                 });
+            // 3 importants to add custom service, these are based on the lifetime 
+            //services.AddScoped<>
+            //  Created Once for each request
+            //services.AddTransient<>
+            //  Created everytime they are requested; for light wighted stateless service
+            //services.AddSingleton<>
+            //  Created the first time they are requested
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
