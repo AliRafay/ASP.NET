@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Surgmz1knoXDWzHroqja3T7Re/TR3a6FW5NdnnvgGPHXBCO23qMg8pjDmvXv5smpqA0hFaMo2f+roICP98fOhA==",
+  "dgSpecHash": "dNKqdZITZ3Vfzq4SLGXHgha+xtFHsKtP1q/Nh1a+0HvzHC/G4OX2FtH1FqFREh0JAMY/zjNwHv/VAuvez2pzkg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\CitiesInfo.API\\CitiesInfo.API.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.9\\microsoft.aspnetcore.jsonpatch.3.1.9.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.9\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.9.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
