@@ -130,6 +130,26 @@ namespace CitiesInfo.API.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletePlaceToVisit(int id, int cityId)
+        {
+            var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+            if (city == null)
+            {
+                return NotFound();
+            }
+            PlacesToVisitDto placeFromStore = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
+
+            if (placeFromStore == null)
+            {
+                return NotFound();
+            }
+
+            city.PlacesToVisit.Remove(placeFromStore);
+
+            return NoContent();
+        }
     }
 
 }
