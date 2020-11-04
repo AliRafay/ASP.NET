@@ -2,7 +2,7 @@
 
 namespace Services
 {
-    class LocalMailService : IMailService
+    public class LocalMailService : IMailService
     {
         private string mailTo = "anonymous@mycompany.com";
         private string mailFrom = "admin@mycompany.com";

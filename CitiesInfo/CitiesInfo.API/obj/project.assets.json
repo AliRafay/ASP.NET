@@ -71,6 +71,16 @@
         "runtime": {
           "bin/placeholder/Models.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -229,12 +239,18 @@
       "type": "project",
       "path": "../Models/Models.csproj",
       "msbuildProject": "../Models/Models.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.9",
-      "Models >= 1.0.0"
+      "Models >= 1.0.0",
+      "Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -265,6 +281,9 @@
           "projectReferences": {
             "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\Models.csproj": {
               "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\Models.csproj"
+            },
+            "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Services\\Services.csproj"
             }
           }
         }

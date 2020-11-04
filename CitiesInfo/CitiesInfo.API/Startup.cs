@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Services;
 using System.Threading;
 
 namespace CitiesInfo.API
@@ -46,6 +47,11 @@ namespace CitiesInfo.API
             //  Created everytime they are requested; for light wighted stateless service
             //services.AddSingleton<>
             //  Created the first time they are requested
+#if DEBUG
+            services.AddTransient<IMailService, LocalMailService>();
+#else   
+            services.AddTransient<IMailService, CloudMailService>();
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,7 +2,7 @@
 
 namespace Services
 {
-    class CloudMailService : IMailService
+    public class CloudMailService : IMailService
     {
         private string mailTo = "anonymous@mycompany.com";
         private string mailFrom = "admin@mycompany.com";

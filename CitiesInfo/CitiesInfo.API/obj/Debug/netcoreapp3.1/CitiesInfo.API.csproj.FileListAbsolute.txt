@@ -25,3 +25,5 @@ C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreap
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\obj\Debug\netcoreapp3.1\CitiesInfo.API.csproj.CoreCompileInputs.cache
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\obj\Debug\netcoreapp3.1\CitiesInfo.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Services.dll
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Services.pdb

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Models;
+using Services;
 using System;
 using System.Linq;
 
@@ -13,9 +14,13 @@ namespace CitiesInfo.API.Controllers
     public class PlacesToVisitController : ControllerBase
     {
         private readonly ILogger<PlacesToVisitController> logger;
-        public PlacesToVisitController(ILogger<PlacesToVisitController> l)
+        private readonly IMailService mailService;
+
+        public PlacesToVisitController(ILogger<PlacesToVisitController> l, IMailService m)
         {
             logger = l ?? throw new ArgumentNullException(nameof(l));
+            mailService = m ?? throw new ArgumentNullException(nameof(l));
+
         }
 
         [HttpGet]
@@ -156,6 +161,9 @@ namespace CitiesInfo.API.Controllers
             }
 
             city.PlacesToVisit.Remove(placeFromStore);
+
+            mailService.Send("Place To Visit Deleted!",
+                $"Place To Visit: {placeFromStore.Name} with Id: {placeFromStore.Id} Deleted.");
 
             return NoContent();
         }

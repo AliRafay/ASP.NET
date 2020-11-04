@@ -1,6 +1,6 @@
 ﻿namespace Services
 {
-    interface IMailService
+    public interface IMailService
     {
         void Send(string Subject, string Message);
     }
