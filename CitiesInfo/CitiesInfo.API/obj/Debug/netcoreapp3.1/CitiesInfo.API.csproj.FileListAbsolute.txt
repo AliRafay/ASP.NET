@@ -27,3 +27,5 @@ C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\obj\Debug\netcoreap
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\obj\Debug\netcoreapp3.1\CitiesInfo.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Services.dll
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Services.pdb
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
