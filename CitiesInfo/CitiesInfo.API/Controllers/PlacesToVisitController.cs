@@ -163,7 +163,7 @@ namespace CitiesInfo.API.Controllers
             city.PlacesToVisit.Remove(placeFromStore);
 
             mailService.Send("Place To Visit Deleted!",
-                $"Place To Visit: "{placeFromStore.Name}" with Id: {placeFromStore.Id} Deleted.");
+                $"Place To Visit: \"{placeFromStore.Name}\" with Id: {placeFromStore.Id} Deleted.");
 
             return NoContent();
         }
