@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "8QP+hOpOA5JiGZkVGfzv4iR0My089nRTnt7EI7qmYp+BTgdFIIrVBejfE+97zIT9bWygR9SZeuxDI4/kQAnaOg==",
+  "dgSpecHash": "XunzyvSRZfRJuRxTeJwj3N11wPXO1dgmAZL5JH1GacALKWY1L9+3DJIBX8ZUQhcJP0NMvXmKzlWlQHIv2HSSpA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Services\\Services.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.9\\microsoft.extensions.configuration.abstractions.3.1.9.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.9\\microsoft.extensions.primitives.3.1.9.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "kOA5T8xdTx3vsA8ltogdoCXojTcTpkiOerGDrY3T0AgiJSox/ItEY2UzorGHclcztwlaN6tP35DyaqS4zNi1TQ==",
+  "dgSpecHash": "N8k2RmfyPd7LdMTEr681QStESyp4eD7febwKIuAomV1q5BkdBYUhf/sKu0+i8tEgWW8Ant2IzrYY8EqHzRstqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\CitiesInfo.API\\CitiesInfo.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.9\\microsoft.aspnetcore.jsonpatch.3.1.9.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.9\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.9.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.9\\microsoft.extensions.configuration.abstractions.3.1.9.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.9\\microsoft.extensions.primitives.3.1.9.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
   ],
