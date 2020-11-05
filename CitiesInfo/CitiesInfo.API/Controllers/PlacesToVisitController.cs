@@ -19,7 +19,7 @@ namespace CitiesInfo.API.Controllers
         public PlacesToVisitController(ILogger<PlacesToVisitController> l, IMailService m)
         {
             logger = l ?? throw new ArgumentNullException(nameof(l));
-            mailService = m ?? throw new ArgumentNullException(nameof(l));
+            mailService = m ?? throw new ArgumentNullException(nameof(m));
 
         }
 
