@@ -1,0 +1,5 @@
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\bin\Debug\netcoreapp3.1\Contexts.deps.json
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\bin\Debug\netcoreapp3.1\Contexts.dll
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Debug\netcoreapp3.1\Contexts.csprojAssemblyReference.cache
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Debug\netcoreapp3.1\Contexts.AssemblyInfoInputs.cache
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Debug\netcoreapp3.1\Contexts.AssemblyInfo.cs
