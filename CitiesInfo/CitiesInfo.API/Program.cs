@@ -21,6 +21,14 @@ namespace CitiesInfo.API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+
+                    //If you want to add more configurations files along with appsettings
+                    //(But not prefered)
+
+                    //webBuilder.ConfigureAppConfiguration(config =>
+                    //{
+                    //    config.AddJsonFile("mySettings.json", optional: true, reloadOnChange: true);
+                    //});
                 });
     }
 }
