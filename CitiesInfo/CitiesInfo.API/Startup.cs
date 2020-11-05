@@ -47,9 +47,9 @@ namespace CitiesInfo.API
             //  Created everytime they are requested; for light wighted stateless service
             //services.AddSingleton<>
             //  Created the first time they are requested
-#if DEBUG
+#if DEBUG //Compiler Directives
             services.AddTransient<IMailService, LocalMailService>();
-#else   
+#else // means release
             services.AddTransient<IMailService, CloudMailService>();
 #endif
         }
