@@ -16,6 +16,6 @@ namespace Entities
 
         [MaxLength(200)]
         public string Description { get; set; }
-        public List<PlacesToVisit> PlacesToVisit { get; set; } = new List<PlacesToVisit>();
+        public List<PlaceToVisit> PlacesToVisit { get; set; } = new List<PlaceToVisit>();
     }
 }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities
 {
-    public class PlacesToVisit
+    public class PlaceToVisit
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //generates automatic id in accordance with SQLServer

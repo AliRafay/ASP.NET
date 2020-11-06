@@ -27,6 +27,12 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\Contexts.csproj": {
+                "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\Contexts.csproj"
+              },
+              "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj"
+              },
               "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\Models.csproj": {
                 "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\Models.csproj"
               },
@@ -64,6 +70,124 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\Contexts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\Contexts.csproj",
+        "projectName": "Contexts",
+        "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\Contexts.csproj",
+        "packagesPath": "C:\\Users\\Koderlabs\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Koderlabs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Koderlabs\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Koderlabs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

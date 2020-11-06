@@ -1,11 +1,13 @@
+using Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Services;
-using System.Threading;
+
 
 namespace CitiesInfo.API
 {
@@ -20,7 +22,7 @@ namespace CitiesInfo.API
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {   
+        {
             services.AddControllersWithViews().AddNewtonsoftJson(); //Service to fix API error:
             //The JSON value could not be converted to Microsoft.AspNetCore.JsonPatch.JsonPatchDocument
 
@@ -52,6 +54,11 @@ namespace CitiesInfo.API
 #else // means release
             services.AddTransient<IMailService, CloudMailService>();
 #endif
+
+            services.AddDbContext<CityInfoContext>(options =>  //addDbContext is scoped by default
+            {
+                options.UseSqlServer(Configuration["DbConnectionString"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
