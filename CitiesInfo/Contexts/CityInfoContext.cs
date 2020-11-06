@@ -16,7 +16,8 @@ namespace Contexts
         //}
         public CityInfoContext(DbContextOptions options) : base(options) //calling base class contructor
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
+            //We can also create database by Update-Database command in package manager console
         }
 
         DbSet<City> Cities { get; set; }
