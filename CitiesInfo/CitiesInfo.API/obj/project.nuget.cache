@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "G+ZsXQzseQy8CAUKQ9BU4oH/PPvO+Q09eJmqeiI+M3LRN78MQt5E7nKblbG2XdPYeQspE6R/J37VHKcBeK1dKQ==",
+  "dgSpecHash": "stflHeMmoCepqvBU6BhSq3QKd7Ss/cpBcssk5ORk/owLcS/NamVZ6b6E1lvGtVd+AenJYsDqbOdoLBeyRq8Kmw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\CitiesInfo.API\\CitiesInfo.API.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.9\\microsoft.entityframeworkcore.3.1.9.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.9\\microsoft.entityframeworkcore.abstractions.3.1.9.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.9\\microsoft.entityframeworkcore.analyzers.3.1.9.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.9\\microsoft.entityframeworkcore.design.3.1.9.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.9\\microsoft.entityframeworkcore.relational.3.1.9.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.9\\microsoft.entityframeworkcore.sqlserver.3.1.9.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.9\\microsoft.extensions.caching.abstractions.3.1.9.nupkg.sha512",
