@@ -57,7 +57,7 @@ namespace CitiesInfo.API
 
             services.AddDbContext<CityInfoContext>(options =>  //addDbContext is scoped by default
             {
-                options.UseSqlServer(Configuration["DbConnectionString"]);
+                options.UseSqlServer(Configuration["DbConnectionString:CityInfoDb"]);
             });
         }
 
