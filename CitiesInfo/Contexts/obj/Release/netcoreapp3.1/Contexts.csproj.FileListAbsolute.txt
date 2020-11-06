@@ -1,0 +1,15 @@
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\bin\Release\netcoreapp3.1\Contexts.deps.json
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\bin\Release\netcoreapp3.1\Contexts.runtimeconfig.json
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\bin\Release\netcoreapp3.1\Contexts.runtimeconfig.dev.json
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\bin\Release\netcoreapp3.1\Contexts.dll
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\bin\Release\netcoreapp3.1\Contexts.pdb
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\bin\Release\netcoreapp3.1\Entities.dll
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\bin\Release\netcoreapp3.1\Entities.pdb
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Release\netcoreapp3.1\Contexts.csprojAssemblyReference.cache
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Release\netcoreapp3.1\Contexts.AssemblyInfoInputs.cache
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Release\netcoreapp3.1\Contexts.AssemblyInfo.cs
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Release\netcoreapp3.1\Contexts.csproj.CoreCompileInputs.cache
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Release\netcoreapp3.1\Contexts.csproj.CopyComplete
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Release\netcoreapp3.1\Contexts.dll
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Release\netcoreapp3.1\Contexts.pdb
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Contexts\obj\Release\netcoreapp3.1\Contexts.genruntimeconfig.cache

@@ -13,8 +13,8 @@ namespace Entities
         [MaxLength(50)]
         public string Name { get; set; }
 
-        //[MaxLength(200)]
-        //public string Description { get; set; } //use later by using migrations
+        [MaxLength(200)]
+        public string Description { get; set; } //use later by using migrations
 
         [ForeignKey("CityId")]
         public City City { get; set; } //navigation property; this will connect placesToVisit to City, All others are column names

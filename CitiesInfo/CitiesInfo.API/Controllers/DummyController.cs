@@ -8,16 +8,16 @@ namespace CitiesInfo.API.Controllers
     [ApiController]
     public class DummyController : ControllerBase
     {
-        private readonly CityInfoContext context;
-        public DummyController(CityInfoContext ctx)  //this contructor will initiate cityInfoContext 
-        {
-            context = ctx ?? throw new ArgumentNullException(nameof(ctx));
-        }
+        //private readonly CityInfoContext context;
+        //public DummyController(CityInfoContext ctx)  //this contructor will initiate cityInfoContext 
+        //{
+        //    context = ctx ?? throw new ArgumentNullException(nameof(ctx));
+        //}
 
-        [HttpGet]
-        public IActionResult TestDatabase()
-        {
-            return Ok();
-        }
+        //[HttpGet]
+        //public IActionResult TestDatabase()
+        //{
+        //    return Ok();
+        //}
     }
 }
