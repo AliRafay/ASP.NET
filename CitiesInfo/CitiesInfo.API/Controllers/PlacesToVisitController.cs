@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Models;
 using Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 
@@ -15,49 +16,73 @@ namespace CitiesInfo.API.Controllers
     {
         private readonly ILogger<PlacesToVisitController> _logger;
         private readonly IMailService _mailService;
+        private readonly ICityInfoRepository _cityInfoRepo;
 
         //Dependency Injections
-        public PlacesToVisitController(ILogger<PlacesToVisitController> l, 
+        public PlacesToVisitController(ILogger<PlacesToVisitController> l,
             IMailService m,                                                    //services
-            ICityInfoRepository CityInfoRepo)
+            ICityInfoRepository c)
         {
-            _logger = l ?? 
+            _logger = l ??
                 throw new ArgumentNullException(nameof(l));
-            _mailService = m ?? 
+            _mailService = m ??
                 throw new ArgumentNullException(nameof(m));
-
+            _cityInfoRepo = c ??
+                throw new ArgumentNullException(nameof(c));
         }
 
         [HttpGet]
         public IActionResult GetPlacesToVisit(int cityId)
         {
-            var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
-            if (city == null)
+            //var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+
+            if (!_cityInfoRepo.CityExists(cityId))
+            {
+                return NotFound();
+            }
+
+            var placesToVisitForCity = _cityInfoRepo.GetPlacesToVisitForCity(cityId);
+            if (placesToVisitForCity == null)
             {
                 //logger.LogInformation($"City with id={cityId} was Not Found");
                 return NotFound();
-
             }
-            return Ok(city.PlacesToVisit);
+            var result = new List<PlacesToVisitDto>();
+            foreach (var ptv in placesToVisitForCity)
+            {
+                result.Add(new PlacesToVisitDto()
+                {
+                    Id = ptv.Id,
+                    Name = ptv.Name,
+                    Description = ptv.Description
+                });
+            }
+            return Ok(result);
         }
 
         [HttpGet("{id}", Name = "GetPlaceToVisit")]
         public IActionResult GetPlaceToVisit(int id, int cityId)
         {
-            var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+            //var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+            if (!_cityInfoRepo.CityExists(cityId))
+            {
+                return NotFound();
+            }
+            var placeToVisitForCity = _cityInfoRepo.GetPlaceToVisitForCity(id,cityId);
 
-            if (city == null)
+            if (placeToVisitForCity == null)
             {
                 return NotFound();
             }
 
-            var place = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
-
-            if (place == null)
+            var result = new PlacesToVisitDto()
             {
-                return NotFound();
-            }
-            return Ok(place);
+                Id = placeToVisitForCity.Id,
+                Name = placeToVisitForCity.Name,
+                Description = placeToVisitForCity.Description
+            };
+
+            return Ok(result);
         }
 
         [HttpPost]

@@ -46,5 +46,11 @@ namespace Services
                 .Where(p=>p.Id == id && p.CityId == cityId).FirstOrDefault();
         }
 
+        //we could have used the GetCity method but it returns whole object or null,
+        //CityExists is a cleaner approach
+        public bool CityExists(int cityId)
+        {
+            return _context.Cities.Any(c => c.Id == cityId);
+        }
     }
 }
