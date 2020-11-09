@@ -1453,6 +1453,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Contexts": "1.0.0",
+          "Entities": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.9"
         },
         "compile": {

@@ -282,7 +282,14 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\Contexts.csproj": {
+                "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\Contexts.csproj"
+              },
+              "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

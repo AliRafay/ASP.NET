@@ -13,13 +13,18 @@ namespace CitiesInfo.API.Controllers
     [ApiController]
     public class PlacesToVisitController : ControllerBase
     {
-        private readonly ILogger<PlacesToVisitController> logger;
-        private readonly IMailService mailService;
+        private readonly ILogger<PlacesToVisitController> _logger;
+        private readonly IMailService _mailService;
 
-        public PlacesToVisitController(ILogger<PlacesToVisitController> l, IMailService m)
+        //Dependency Injections
+        public PlacesToVisitController(ILogger<PlacesToVisitController> l, 
+            IMailService m,                                                    //services
+            ICityInfoRepository CityInfoRepo)
         {
-            logger = l ?? throw new ArgumentNullException(nameof(l));
-            mailService = m ?? throw new ArgumentNullException(nameof(m));
+            _logger = l ?? 
+                throw new ArgumentNullException(nameof(l));
+            _mailService = m ?? 
+                throw new ArgumentNullException(nameof(m));
 
         }
 
@@ -162,7 +167,7 @@ namespace CitiesInfo.API.Controllers
 
             city.PlacesToVisit.Remove(placeFromStore);
 
-            mailService.Send("Place To Visit Deleted!",
+            _mailService.Send("Place To Visit Deleted!",
                 $"Place To Visit: \"{placeFromStore.Name}\" with Id: {placeFromStore.Id} Deleted.");
 
             return NoContent();
