@@ -19,6 +19,8 @@ namespace Contexts
             //We can also create database by Update-Database command in package manager console
         }
 
+        //code for addition of dummydata manually
+
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    City[] Cities =
@@ -96,10 +98,9 @@ namespace Contexts
 
         //    base.OnModelCreating(modelBuilder);
 
-        //}  //code for addition of dummydata manually
-
-        DbSet<City> Cities { get; set; }
-        DbSet<PlaceToVisit> PlacesToVisit { get; set; }
+        //} 
+        public DbSet<City> Cities { get; set; }
+        public DbSet<PlaceToVisit> PlacesToVisit { get; set; }
 
     }
 }
