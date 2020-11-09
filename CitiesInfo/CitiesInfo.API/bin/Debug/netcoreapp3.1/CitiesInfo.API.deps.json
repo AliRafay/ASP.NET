@@ -31,6 +31,7 @@
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.9",
           "Microsoft.EntityFrameworkCore.Design": "3.1.9",
           "Models": "1.0.0",
+          "Profiles": "1.0.0",
           "Services": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -1421,6 +1422,22 @@
         },
         "compile": {
           "Models.dll": {}
+        }
+      },
+      "Profiles/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "Contexts": "1.0.0",
+          "Entities": "1.0.0",
+          "Models": "1.0.0",
+          "Services": "1.0.0"
+        },
+        "runtime": {
+          "Profiles.dll": {}
+        },
+        "compile": {
+          "Profiles.dll": {}
         }
       },
       "Services/1.0.0": {
@@ -3771,6 +3788,11 @@
       "sha512": ""
     },
     "Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Profiles/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

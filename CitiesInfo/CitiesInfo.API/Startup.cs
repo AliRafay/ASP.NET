@@ -1,3 +1,4 @@
+using AutoMapper;
 using Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,8 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Profiles;
 using Services;
-
+using System;
+using System.Reflection;
 
 namespace CitiesInfo.API
 {
@@ -62,6 +65,21 @@ namespace CitiesInfo.API
 
             //service for database get,update,delete etc
             services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+            //System.Reflection.Assembly.Load(assemblyString:"");
+            //service for autoMapper
+
+            //we need to load this assembly of profiles in order to get all the profiles into automapper,
+            //since these are different projects, the Profiles Class Library isnt loaded
+            //so we manually load it
+
+            string path = @"C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Profiles\bin\Debug\netcoreapp3.1\Profiles.dll";
+            Assembly ProfilesAssembly = Assembly.LoadFile(path);
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());  //this will search for profiles in all assemblies
+
+            //we can also do this to add an indivisual profile
+            //var type = typeof(CityProfile);
+            //services.AddAutoMapper(type);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

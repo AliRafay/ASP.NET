@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using AutoMapper;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Services;
@@ -13,11 +14,15 @@ namespace CitiesInfo.API.Controllers
     public class CitiesController : ControllerBase
     {
         private readonly ICityInfoRepository _cityInfoRepo;
+        private readonly IMapper _mapper;
 
-        public CitiesController(ICityInfoRepository cityInfoRepo)
+        public CitiesController(ICityInfoRepository cityInfoRepo,
+            IMapper mapper)
         {
             _cityInfoRepo = cityInfoRepo ??
                 throw new ArgumentNullException(nameof(cityInfoRepo));
+            _mapper = mapper ??
+                throw new ArgumentNullException(nameof(mapper));
         }
         //[HttpGet("api/cities")] // Indivisual Route, has to be specified for every single request
         [HttpGet]
@@ -28,18 +33,25 @@ namespace CitiesInfo.API.Controllers
         public IActionResult GetCities()
         {
             //return Ok(CitiesDataStore.StaticDataStoreObj.Cities);
+
+
             var cityEntities = _cityInfoRepo.GetCities();
-            var results = new List<CityWithoutPlacesToVisitDto>();
-            foreach (City cityEntity in cityEntities)
-            {
-                results.Add(new CityWithoutPlacesToVisitDto()
-                {
-                    Id = cityEntity.Id,
-                    Name = cityEntity.Name,
-                    Description = cityEntity.Description
-                });
-            }
-            return Ok(results);
+
+            //achieving below code using autoMapper
+
+            //var results = new List<CityWithoutPlacesToVisitDto>();
+            //foreach (City cityEntity in cityEntities)
+            //{
+            //    results.Add(new CityWithoutPlacesToVisitDto()
+            //    {
+            //        Id = cityEntity.Id,
+            //        Name = cityEntity.Name,
+            //        Description = cityEntity.Description
+            //    });
+            //}
+            //var response = cityEntities.Select(x => _mapper.Map<CityWithoutPlacesToVisitDto>(x));
+            var response = _mapper.Map<IEnumerable<CityWithoutPlacesToVisitDto>>(cityEntities);
+            return Ok(response);
         }
 
         [HttpGet("{id}")]
@@ -68,32 +80,32 @@ namespace CitiesInfo.API.Controllers
 
             if (!includePlacesToVisit)
             {
-                var cityResult = new CityWithoutPlacesToVisitDto()
-                {
-                    Id = city.Id,
-                    Name = city.Name,
-                    Description = city.Description
-                };
-                return Ok(cityResult);
+                //var cityResult = new CityWithoutPlacesToVisitDto()
+                //{
+                //    Id = city.Id,
+                //    Name = city.Name,
+                //    Description = city.Description
+                //};
+                return Ok(_mapper.Map<CityWithoutPlacesToVisitDto>(city));
             }
             else
             {
-                var cityResult = new CityDto()
-                {
-                    Id = city.Id,
-                    Name = city.Name,
-                    Description = city.Description
-                };
-                foreach (var ptv in city.PlacesToVisit)
-                {
-                    cityResult.PlacesToVisit.Add(new PlacesToVisitDto()
-                    {
-                        Id = ptv.Id,
-                        Name= ptv.Name,
-                        Description = ptv.Description
-                    });
-                }
-                return Ok(cityResult);
+                //var cityResult = new CityDto()
+                //{
+                //    Id = city.Id,
+                //    Name = city.Name,
+                //    Description = city.Description
+                //};
+                //foreach (var ptv in city.PlacesToVisit)
+                //{
+                //    cityResult.PlacesToVisit.Add(new PlacesToVisitDto()
+                //    {
+                //        Id = ptv.Id,
+                //        Name= ptv.Name,
+                //        Description = ptv.Description
+                //    });
+                //}
+                return Ok(_mapper.Map<CityDto>(city));
             }
         }
     }
