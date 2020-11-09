@@ -6,9 +6,9 @@ C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\obj\Debug\netcoreapp3.1\S
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfo.cs
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\obj\Debug\netcoreapp3.1\Services.dll
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\obj\Debug\netcoreapp3.1\Services.pdb
-C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\obj\Debug\netcoreapp3.1\Services.csproj.CoreCompileInputs.cache
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\bin\Debug\netcoreapp3.1\Contexts.dll
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\bin\Debug\netcoreapp3.1\Entities.dll
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\bin\Debug\netcoreapp3.1\Contexts.pdb
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\bin\Debug\netcoreapp3.1\Entities.pdb
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\obj\Debug\netcoreapp3.1\Services.csproj.CopyComplete
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Services\obj\Debug\netcoreapp3.1\Services.csproj.CoreCompileInputs.cache

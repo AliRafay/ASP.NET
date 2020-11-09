@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "g6JVWimIsWrtJW8btI0ovTBsRWkvYBcL5wDhKisqwZiFQiB08mKbyxMBFc+0LGUfWBn/piqtqNqABPZAf/Cutw==",
+  "dgSpecHash": "FTUt5LExyO6HcTVZ5N2rp4rP5gv6PSQGliNheOu7n2Cg6heKNy9Xj2AyAoWmV6QLyYDWqEW4AciFFYUfAuMHpA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\Models.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.0\\microsoft.extensions.dependencyinjection.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.extensions.options\\3.0.0\\microsoft.extensions.options.3.0.0.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.0\\microsoft.extensions.primitives.3.0.0.nupkg.sha512",
+    "C:\\Users\\Koderlabs\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

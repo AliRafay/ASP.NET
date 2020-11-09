@@ -4,6 +4,6 @@ C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Entities\bin\Debug\netcoreapp3.1\E
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
-C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Entities\obj\Debug\netcoreapp3.1\Entities.dll
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache

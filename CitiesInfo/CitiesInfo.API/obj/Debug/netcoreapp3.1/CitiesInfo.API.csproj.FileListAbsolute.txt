@@ -69,5 +69,7 @@ C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreap
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Contexts.pdb
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Entities.pdb
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\obj\Debug\netcoreapp3.1\CitiesInfo.API.csproj.CoreCompileInputs.cache
 C:\Users\Koderlabs\Desktop\ASP.NET\CitiesInfo\CitiesInfo.API\obj\Debug\netcoreapp3.1\CitiesInfo.API.MvcApplicationPartsAssemblyInfo.cache
