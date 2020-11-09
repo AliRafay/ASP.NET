@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Entities;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-
+using Models;
+using Services;
+using System;
+using System.Collections.Generic;
 namespace CitiesInfo.API.Controllers
 {
     //[Route("api/[Controller]")] //Controller = Cities
@@ -11,6 +12,13 @@ namespace CitiesInfo.API.Controllers
     [ApiController]
     public class CitiesController : ControllerBase
     {
+        private readonly ICityInfoRepository _cityInfoRepo;
+
+        public CitiesController(ICityInfoRepository cityInfoRepo)
+        {
+            _cityInfoRepo = cityInfoRepo ??
+                throw new ArgumentNullException(nameof(cityInfoRepo));
+        }
         //[HttpGet("api/cities")] // Indivisual Route, has to be specified for every single request
         [HttpGet]
         //public JsonResult GetCities()
@@ -19,7 +27,19 @@ namespace CitiesInfo.API.Controllers
         //}
         public IActionResult GetCities()
         {
-            return Ok(CitiesDataStore.StaticDataStoreObj.Cities);
+            //return Ok(CitiesDataStore.StaticDataStoreObj.Cities);
+            var cityEntities = _cityInfoRepo.GetCities();
+            var results = new List<CityWithoutPlacesToVisitDto>();
+            foreach (City cityEntity in cityEntities)
+            {
+                results.Add(new CityWithoutPlacesToVisitDto()
+                {
+                    Id = cityEntity.Id,
+                    Name = cityEntity.Name,
+                    Description = cityEntity.Description
+                });
+            }
+            return Ok(results);
         }
 
         [HttpGet("{id}")]
@@ -30,20 +50,53 @@ namespace CitiesInfo.API.Controllers
         //    //FirstOrDefault is a LINQ Function that returns the first element that satisfies the condition or default.
         //}
 
-        public IActionResult GetCity(int id)
+        public IActionResult GetCity(int id, bool includePlacesToVisit = false)
         {
-            var CityToReturn = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == id);
+            //var CityToReturn = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == id);
+            //if (CityToReturn == null)
+            //{
+            //    return NotFound();
+            //}
+            //return Ok(CityToReturn);
 
-            if(CityToReturn == null)
+            var city = _cityInfoRepo.GetCity(id, includePlacesToVisit);
+
+            if (city == null)
             {
                 return NotFound();
             }
-            return Ok(CityToReturn);
-        }
 
-        //public string Message()
-        //{
-        //    return "hello";
-        //}
+            if (!includePlacesToVisit)
+            {
+                var cityResult = new CityWithoutPlacesToVisitDto()
+                {
+                    Id = city.Id,
+                    Name = city.Name,
+                    Description = city.Description
+                };
+                return Ok(cityResult);
+            }
+            else
+            {
+                var cityResult = new CityDto()
+                {
+                    Id = city.Id,
+                    Name = city.Name,
+                    Description = city.Description
+                };
+                foreach (var ptv in city.PlacesToVisit)
+                {
+                    cityResult.PlacesToVisit.Add(new PlacesToVisitDto()
+                    {
+                        Id = ptv.Id,
+                        Name= ptv.Name,
+                        Description = ptv.Description
+                    });
+                }
+                return Ok(cityResult);
+            }
+        }
     }
+
 }
+

@@ -59,6 +59,9 @@ namespace CitiesInfo.API
             {
                 options.UseSqlServer(Configuration["DbConnectionString:CityInfoDb"]);
             });
+
+            //service for database get,update,delete etc
+            services.AddScoped<ICityInfoRepository, CityInfoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
