@@ -11,7 +11,9 @@ namespace Profiles
     {
         public PlaceToVisitProfile()
         {
-            CreateMap<PlaceToVisit, PlacesToVisitDto>();
+            CreateMap<Entities.PlaceToVisit, Models.PlacesToVisitDto>();
+            CreateMap<Models.PlacesToVisitForCreationDto, Entities.PlaceToVisit>();
+            CreateMap<Models.PlacesToVisitForUpdateDto, Entities.PlaceToVisit>();
         }
     }
 }

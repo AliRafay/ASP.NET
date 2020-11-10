@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Entities;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -94,46 +95,65 @@ namespace CitiesInfo.API.Controllers
         [HttpPost]
         public IActionResult CreatePlaceToVisit(int cityId, PlacesToVisitForCreationDto newPlaceToVisit)
         {
-            var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
-            if (city == null)
+            //var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+            if (!_cityInfoRepo.CityExists(cityId))
             {
                 return NotFound();
             }
 
-            int maxIdPlacesToVisit = CitiesDataStore.StaticDataStoreObj.Cities.SelectMany(c => c.PlacesToVisit).Max(p => p.Id);
+            //database will automatically create id
+            //int maxIdPlacesToVisit = CitiesDataStore.StaticDataStoreObj.Cities.SelectMany(c => c.PlacesToVisit).Max(p => p.Id);
 
-            PlacesToVisitDto finalPlaceToVisit = new PlacesToVisitDto()
-            {
-                Id = ++maxIdPlacesToVisit,
-                Name = newPlaceToVisit.Name,
-                Description = newPlaceToVisit.Description
-            };
+            //PlacesToVisitDto finalPlaceToVisit = new PlacesToVisitDto()
+            //{
+            //    Id = ++maxIdPlacesToVisit,
+            //    Name = newPlaceToVisit.Name,
+            //    Description = newPlaceToVisit.Description
+            //};
+            var FinalPlaceToVisit = _mapper.Map<Entities.PlaceToVisit>(newPlaceToVisit); //mapping from api to entity
 
-            city.PlacesToVisit.Add(finalPlaceToVisit);
+            _cityInfoRepo.AddPlaceToVisit(cityId, FinalPlaceToVisit); //adding to in-memory database
+            _cityInfoRepo.Save(); //saving changes to database
 
-            return CreatedAtRoute("GetPlaceToVisit",       //Route name , Route values, and Object
-                new { id = finalPlaceToVisit.Id, cityId },
-                finalPlaceToVisit);
+            //we want to return placesToVisitDto object, not entity object, so we need to map it back
+
+            var createdPlaceToVisit = _mapper.Map<PlacesToVisitDto>(FinalPlaceToVisit);
+
+            return CreatedAtRoute("GetPlaceToVisit",  //Route name , Route values, and Object
+                new { id = createdPlaceToVisit.Id, cityId }, //this is for 201 location 
+                createdPlaceToVisit);                        //this is the returning object
         }
 
         [HttpPut("{id}")]
         public IActionResult FullUpdatePlaceToVisit(int id, int cityId, PlacesToVisitForUpdateDto updatedPlace)
         {
-            var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
-            if (city == null)
-            {
-                return NotFound();
-            }
-            PlacesToVisitDto placeFromStore = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
-
-            if (placeFromStore == null)
+            //var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+            if (!_cityInfoRepo.CityExists(cityId))
             {
                 return NotFound();
             }
 
-            placeFromStore.Name = updatedPlace.Name;
-            placeFromStore.Description = updatedPlace.Description;
+            //PlacesToVisitDto placeFromStore = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
 
+            //if (placeFromStore == null)
+            //{
+            //    return NotFound();
+            //}
+
+            var placeToVisitEntity = _cityInfoRepo.GetPlaceToVisitForCity(id, cityId);
+            if (placeToVisitEntity == null)
+            {
+                return NotFound();
+            }
+
+            //placeFromStore.Name = updatedPlace.Name;
+            //placeFromStore.Description = updatedPlace.Description;
+
+            _mapper.Map(updatedPlace, placeToVisitEntity);  //this will map/change the entity object from source to destination with overriding 
+
+            _cityInfoRepo.UpdatePlaceToVisit(id, cityId, placeToVisitEntity); //empty, will do nothing, for stabalization
+
+            _cityInfoRepo.Save();
 
             return NoContent();
         }

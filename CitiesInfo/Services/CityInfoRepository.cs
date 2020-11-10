@@ -52,5 +52,19 @@ namespace Services
         {
             return _context.Cities.Any(c => c.Id == cityId);
         }
+
+        public void AddPlaceToVisit(int cityId, PlaceToVisit PlaceToVisit)
+        {
+            var city = GetCity(cityId, false);
+            city.PlacesToVisit.Add(PlaceToVisit); //in-memory addition, need to use save after this
+        }
+        public void UpdatePlaceToVisit(int id, int cityId, PlaceToVisit PlaceToVisit)  
+        {
+            //in our case this is empty, it will do nothing, but makes code more stable for future changes
+        }
+        public bool Save()
+        {
+            return _context.SaveChanges() >= 0;
+        }
     }
 }
