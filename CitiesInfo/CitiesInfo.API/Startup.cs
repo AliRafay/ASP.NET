@@ -65,9 +65,7 @@ namespace CitiesInfo.API
 
             //service for database get,update,delete etc
             services.AddScoped<ICityInfoRepository, CityInfoRepository>();
-            //System.Reflection.Assembly.Load(assemblyString:"");
-            //service for autoMapper
-
+            
             //we need to load this assembly of profiles in order to get all the profiles into automapper,
             //since these are different projects, the Profiles Class Library isnt loaded
             //so we manually load it

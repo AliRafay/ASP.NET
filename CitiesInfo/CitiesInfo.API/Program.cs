@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using System.Diagnostics;
-using System.Reflection;
 
 namespace CitiesInfo.API
 {

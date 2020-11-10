@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Entities;
 using Models;
-using System.Collections.Generic;
 
 namespace Profiles
 {
@@ -11,8 +10,6 @@ namespace Profiles
         {
             CreateMap<City, CityWithoutPlacesToVisitDto>();
             CreateMap<City, CityDto>();
-            //CreateMap<IEnumerable<City>, IEnumerable<CityWithoutPlacesToVisitDto>>();
-            //CreateMap(typeof(IEnumerable<>), typeof(IEnumerable<>));
         }
     }
 }
