@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Models;
@@ -17,11 +18,15 @@ namespace CitiesInfo.API.Controllers
         private readonly ILogger<PlacesToVisitController> _logger;
         private readonly IMailService _mailService;
         private readonly ICityInfoRepository _cityInfoRepo;
+        private readonly IMapper _mapper;
 
         //Dependency Injections
-        public PlacesToVisitController(ILogger<PlacesToVisitController> l,
-            IMailService m,                                                    //services
-            ICityInfoRepository c)
+        public PlacesToVisitController(
+            //services
+            ILogger<PlacesToVisitController> l,
+            IMailService m,                                                    
+            ICityInfoRepository c,
+            IMapper mapper)
         {
             _logger = l ??
                 throw new ArgumentNullException(nameof(l));
@@ -29,6 +34,8 @@ namespace CitiesInfo.API.Controllers
                 throw new ArgumentNullException(nameof(m));
             _cityInfoRepo = c ??
                 throw new ArgumentNullException(nameof(c));
+            _mapper = mapper ??
+                throw new ArgumentNullException(nameof(mapper));
         }
 
         [HttpGet]
@@ -47,17 +54,17 @@ namespace CitiesInfo.API.Controllers
                 //logger.LogInformation($"City with id={cityId} was Not Found");
                 return NotFound();
             }
-            var result = new List<PlacesToVisitDto>();
-            foreach (var ptv in placesToVisitForCity)
-            {
-                result.Add(new PlacesToVisitDto()
-                {
-                    Id = ptv.Id,
-                    Name = ptv.Name,
-                    Description = ptv.Description
-                });
-            }
-            return Ok(result);
+            //var result = new List<PlacesToVisitDto>();
+            //foreach (var ptv in placesToVisitForCity)
+            //{
+            //    result.Add(new PlacesToVisitDto()
+            //    {
+            //        Id = ptv.Id,
+            //        Name = ptv.Name,
+            //        Description = ptv.Description
+            //    });
+            //}
+            return Ok(_mapper.Map<IEnumerable<PlacesToVisitDto>>(placesToVisitForCity));
         }
 
         [HttpGet("{id}", Name = "GetPlaceToVisit")]
@@ -75,14 +82,13 @@ namespace CitiesInfo.API.Controllers
                 return NotFound();
             }
 
-            var result = new PlacesToVisitDto()
-            {
-                Id = placeToVisitForCity.Id,
-                Name = placeToVisitForCity.Name,
-                Description = placeToVisitForCity.Description
-            };
-
-            return Ok(result);
+            //var result = new PlacesToVisitDto()
+            //{
+            //    Id = placeToVisitForCity.Id,
+            //    Name = placeToVisitForCity.Name,
+            //    Description = placeToVisitForCity.Description
+            //};
+            return Ok(_mapper.Map<PlacesToVisitDto>(placeToVisitForCity));
         }
 
         [HttpPost]

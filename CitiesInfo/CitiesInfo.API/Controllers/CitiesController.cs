@@ -104,7 +104,7 @@ namespace CitiesInfo.API.Controllers
                 //        Description = ptv.Description
                 //    });
                 //}
-                return Ok(_mapper.Map<CityDto>(city));
+                return Ok(_mapper.Map<CityDto>(city)); //gives error if PlacesToVisit Profile doesn't exist
             }
         }
     }
