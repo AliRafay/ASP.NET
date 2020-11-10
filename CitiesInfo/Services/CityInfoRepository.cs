@@ -62,6 +62,11 @@ namespace Services
         {
             //in our case this is empty, it will do nothing, but makes code more stable for future changes
         }
+
+        public void RemovePlaceToVisit(PlaceToVisit PlaceToVisit)
+        {
+            _context.PlacesToVisit.Remove(PlaceToVisit); //in-memory removal, need to use save after this
+        }
         public bool Save()
         {
             return _context.SaveChanges() >= 0;

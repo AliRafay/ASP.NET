@@ -1,9 +1,4 @@
 ﻿using AutoMapper;
-using Entities;
-using Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Profiles
 {
@@ -13,7 +8,7 @@ namespace Profiles
         {
             CreateMap<Entities.PlaceToVisit, Models.PlacesToVisitDto>();
             CreateMap<Models.PlacesToVisitForCreationDto, Entities.PlaceToVisit>();
-            CreateMap<Models.PlacesToVisitForUpdateDto, Entities.PlaceToVisit>();
+            CreateMap<Models.PlacesToVisitForUpdateDto, Entities.PlaceToVisit>().ReverseMap(); //applies reverse mapping as well
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Services
         bool CityExists(int cityId);
         void AddPlaceToVisit(int cityId, PlaceToVisit PlaceToVisit);
         void UpdatePlaceToVisit(int id, int cityId, PlaceToVisit PlaceToVisit);
+        void RemovePlaceToVisit(PlaceToVisit PlaceToVisit);
         bool Save();
     }
 }

@@ -162,24 +162,36 @@ namespace CitiesInfo.API.Controllers
         public IActionResult PartialUpdatePlaceToVisit(int id, int cityId,
                     JsonPatchDocument<PlacesToVisitForUpdateDto> patchDoc) //using updateDto because we dont want to patch id
         {
-            var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
-            if (city == null)
+            //var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+            //if (city == null)
+            //{
+            //    return NotFound();
+            //}
+            //PlacesToVisitDto placeFromStore = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
+
+            //if (placeFromStore == null)
+            //{
+            //    return NotFound();
+            //}
+
+            if (!_cityInfoRepo.CityExists(cityId))
             {
                 return NotFound();
             }
-            PlacesToVisitDto placeFromStore = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
 
-            if (placeFromStore == null)
+            var placeToVisitEntity = _cityInfoRepo.GetPlaceToVisitForCity(id, cityId);
+            if (placeToVisitEntity == null)
             {
                 return NotFound();
             }
 
-            var PlaceToVisitToPatch = new PlacesToVisitForUpdateDto() //because we need to patch while keeping validations in check
-            {
-                Name = placeFromStore.Name,
-                Description = placeFromStore.Description
-            };
+            //var PlaceToVisitToPatch = new PlacesToVisitForUpdateDto() //because we need to patch while keeping validations in check
+            //{
+            //    Name = placeFromStore.Name,
+            //    Description = placeFromStore.Description
+            //};
 
+            var PlaceToVisitToPatch = _mapper.Map<PlacesToVisitForUpdateDto>(placeToVisitEntity);
             patchDoc.ApplyTo(PlaceToVisitToPatch, ModelState); //this will patch the PlaceToVisitToPatch
                                                                //passing 'modelstate' because if an invalid property is passed,
                                                                //we need to send a bad request
@@ -194,9 +206,14 @@ namespace CitiesInfo.API.Controllers
                 return BadRequest();
             }
 
-            placeFromStore.Name = PlaceToVisitToPatch.Name;
-            placeFromStore.Description = PlaceToVisitToPatch.Description;
+            //placeFromStore.Name = PlaceToVisitToPatch.Name;
+            //placeFromStore.Description = PlaceToVisitToPatch.Description;
 
+            _mapper.Map(PlaceToVisitToPatch, placeToVisitEntity);  //this will map/change the entity object from source to destination with overriding 
+
+            _cityInfoRepo.UpdatePlaceToVisit(id, cityId, placeToVisitEntity); //empty, will do nothing, for stabalization
+
+            _cityInfoRepo.Save();
 
             return NoContent();
         }
@@ -204,22 +221,33 @@ namespace CitiesInfo.API.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletePlaceToVisit(int id, int cityId)
         {
-            var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
-            if (city == null)
+            //var city = CitiesDataStore.StaticDataStoreObj.Cities.FirstOrDefault(city => city.Id == cityId);
+            //if (city == null)
+            //{
+            //    return NotFound();
+            //}
+            //PlacesToVisitDto placeFromStore = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
+
+            //if (placeFromStore == null)
+            //{
+            //    return NotFound();
+            //}
+
+            if (!_cityInfoRepo.CityExists(cityId))
             {
                 return NotFound();
             }
-            PlacesToVisitDto placeFromStore = city.PlacesToVisit.FirstOrDefault(place => place.Id == id);
 
-            if (placeFromStore == null)
-            {
-                return NotFound();
-            }
+            //city.PlacesToVisit.Remove(placeFromStore);
 
-            city.PlacesToVisit.Remove(placeFromStore);
+            var PlaceToVisitEntity = _cityInfoRepo.GetPlaceToVisitForCity(id, cityId);
+
+            _cityInfoRepo.RemovePlaceToVisit(PlaceToVisitEntity);
+
+            _cityInfoRepo.Save();
 
             _mailService.Send("Place To Visit Deleted!",
-                $"Place To Visit: \"{placeFromStore.Name}\" with Id: {placeFromStore.Id} Deleted.");
+                $"Place To Visit: \"{PlaceToVisitEntity.Name}\" with Id: {PlaceToVisitEntity.Id} Deleted.");
 
             return NoContent();
         }
