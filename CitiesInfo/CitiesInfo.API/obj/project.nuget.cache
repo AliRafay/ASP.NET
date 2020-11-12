@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y2w3mtSATmGJGcQmndySNi2hLTscZlZQGT4qlQ3cs3NyArChwQ4GzTWo4+BiqVDG4Hry/2BXPEhdpwvwjlwauQ==",
+  "dgSpecHash": "N0jOWFd7YVOj3xGpAtGGNELppeCutOOxTGq8u5fByl6Viq794TWjHX4bIdK3c1GWAOc2+yFn9baKW48Y+/PTyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\CitiesInfo.API\\CitiesInfo.API.csproj",
+  "projectFilePath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\CitiesInfo.API\\CitiesInfo.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Koderlabs\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Koderlabs\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

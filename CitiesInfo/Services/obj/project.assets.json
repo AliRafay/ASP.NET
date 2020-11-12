@@ -5768,11 +5768,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Services\\Services.csproj",
+      "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\Koderlabs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Services\\obj\\",
+      "outputPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Koderlabs\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5788,11 +5788,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\Contexts.csproj": {
-              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Contexts\\Contexts.csproj"
+            "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Contexts\\Contexts.csproj": {
+              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Contexts\\Contexts.csproj"
             },
-            "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Entities\\Entities.csproj"
+            "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\Models.csproj": {}
+    "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Models\\Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\Models.csproj": {
+    "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\Models.csproj",
+        "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\Koderlabs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Koderlabs\\Desktop\\ASP.NET\\CitiesInfo\\Models\\obj\\",
+        "outputPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Koderlabs\\AppData\\Roaming\\NuGet\\NuGet.Config",
