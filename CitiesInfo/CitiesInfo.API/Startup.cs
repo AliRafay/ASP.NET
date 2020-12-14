@@ -70,7 +70,7 @@ namespace CitiesInfo.API
             //since these are different projects, the Profiles Class Library isnt loaded
             //so we manually load it
 
-            string path = @"C:\Users\Koderlabs\Desktop\CityInfoApi\CitiesInfo\Profiles\bin\Debug\netcoreapp3.1\Profiles.dll";
+            string path = @"C:\Users\Koderlabs\Desktop\Projects\CityInfoApi\CitiesInfo\Profiles\bin\Debug\netcoreapp3.1\Profiles.dll";
             Assembly ProfilesAssembly = Assembly.LoadFile(path);
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());  //this will search for profiles in all assemblies

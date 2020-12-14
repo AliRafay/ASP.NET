@@ -5570,11 +5570,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\CitiesInfo.API\\CitiesInfo.API.csproj",
+      "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\CitiesInfo.API\\CitiesInfo.API.csproj",
       "projectName": "CitiesInfo.API",
-      "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\CitiesInfo.API\\CitiesInfo.API.csproj",
+      "projectPath": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\CitiesInfo.API\\CitiesInfo.API.csproj",
       "packagesPath": "C:\\Users\\Koderlabs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\CitiesInfo.API\\obj\\",
+      "outputPath": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\CitiesInfo.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Koderlabs\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5590,20 +5590,20 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Contexts\\Contexts.csproj": {
-              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Contexts\\Contexts.csproj"
+            "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Contexts\\Contexts.csproj": {
+              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Contexts\\Contexts.csproj"
             },
-            "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj"
+            "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Models\\Models.csproj"
+            "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Models\\Models.csproj"
             },
-            "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Profiles\\Profiles.csproj": {
-              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Profiles\\Profiles.csproj"
+            "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Profiles\\Profiles.csproj": {
+              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Profiles\\Profiles.csproj"
             },
-            "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Services\\Services.csproj"
+            "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Services\\Services.csproj"
             }
           }
         }

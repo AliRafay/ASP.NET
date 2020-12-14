@@ -289,11 +289,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj",
+      "projectPath": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Entities\\Entities.csproj",
       "packagesPath": "C:\\Users\\Koderlabs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Koderlabs\\Desktop\\CityInfoApi\\CitiesInfo\\Entities\\obj\\",
+      "outputPath": "C:\\Users\\Koderlabs\\Desktop\\Projects\\CityInfoApi\\CitiesInfo\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Koderlabs\\AppData\\Roaming\\NuGet\\NuGet.Config",
